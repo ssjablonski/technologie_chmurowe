@@ -1,0 +1,13 @@
+FROM alpine
+
+ARG PYTHON_VERSION
+ARG PORT
+
+ENV PYTHON_VERSION ${PYTHON_VERSION}
+ENV PORT ${PORT}
+
+EXPOSE ${PORT}
+
+RUN apk add --no-cache python${PYTHON_VERSION}
+
+VOLUME /app/data
